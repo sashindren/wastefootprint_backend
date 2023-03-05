@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="productionWaste">
+      <h2 data-cy="productionWasteDetailsHeading"><span>Production Waste</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ productionWaste.id }}</span>
+        </dd>
+        <dt><span>Material</span></dt>
+        <dd>
+          <span>{{ productionWaste.material }}</span>
+        </dd>
+        <dt><span>Quantity</span></dt>
+        <dd>
+          <span>{{ productionWaste.quantity }}</span>
+        </dd>
+        <dt><span>Transport Type</span></dt>
+        <dd>
+          <span>{{ productionWaste.transportType }}</span>
+        </dd>
+        <dt><span>Electric</span></dt>
+        <dd>
+          <span>{{ productionWaste.electric }}</span>
+        </dd>
+        <dt><span>Water</span></dt>
+        <dd>
+          <span>{{ productionWaste.water }}</span>
+        </dd>
+        <dt><span>Waste</span></dt>
+        <dd>
+          <span>{{ productionWaste.waste }}</span>
+        </dd>
+        <dt><span>Department</span></dt>
+        <dd>
+          <div *ngIf="productionWaste.department">
+            <a [routerLink]="['/departments', productionWaste.department.id, 'view']">{{ productionWaste.department.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/production-waste', productionWaste.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

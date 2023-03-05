@@ -1,0 +1,46 @@
+{
+  "applications": ["footprinttest"],
+  "changelogDate": "20230301011846",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "production_waste",
+  "fields": [
+    {
+      "fieldName": "material",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "transportType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "electric",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "water",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "waste",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "ProductionWaste",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "departments",
+      "relationshipName": "department",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

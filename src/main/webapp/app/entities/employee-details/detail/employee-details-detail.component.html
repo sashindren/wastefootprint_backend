@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="employeeDetails">
+      <h2 data-cy="employeeDetailsDetailsHeading"><span>Employee Details</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ employeeDetails.id }}</span>
+        </dd>
+        <dt><span>Employee Name</span></dt>
+        <dd>
+          <span>{{ employeeDetails.employeeName }}</span>
+        </dd>
+        <dt><span>Address</span></dt>
+        <dd>
+          <span>{{ employeeDetails.address }}</span>
+        </dd>
+        <dt><span>Phone Number</span></dt>
+        <dd>
+          <span>{{ employeeDetails.phoneNumber }}</span>
+        </dd>
+        <dt><span>Home Number</span></dt>
+        <dd>
+          <span>{{ employeeDetails.homeNumber }}</span>
+        </dd>
+        <dt><span>Email Address</span></dt>
+        <dd>
+          <span>{{ employeeDetails.emailAddress }}</span>
+        </dd>
+        <dt><span>Transport Type</span></dt>
+        <dd>
+          <span>{{ employeeDetails.transportType }}</span>
+        </dd>
+        <dt><span>Job Title</span></dt>
+        <dd>
+          <span>{{ employeeDetails.jobTitle }}</span>
+        </dd>
+        <dt><span>Supervisor Name</span></dt>
+        <dd>
+          <span>{{ employeeDetails.supervisorName }}</span>
+        </dd>
+        <dt><span>Company Id</span></dt>
+        <dd>
+          <span>{{ employeeDetails.companyId }}</span>
+        </dd>
+        <dt><span>Employeedetails</span></dt>
+        <dd>
+          <div *ngIf="employeeDetails.employeedetails">
+            <a [routerLink]="['/departments', employeeDetails.employeedetails.id, 'view']">{{ employeeDetails.employeedetails.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/employee-details', employeeDetails.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

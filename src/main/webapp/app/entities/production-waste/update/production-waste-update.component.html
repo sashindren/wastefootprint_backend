@@ -1,0 +1,86 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-production-waste-heading" data-cy="ProductionWasteCreateUpdateHeading">Create or edit a Production Waste</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_material">Material</label>
+          <input type="text" class="form-control" name="material" id="field_material" data-cy="material" formControlName="material" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_quantity">Quantity</label>
+          <input type="number" class="form-control" name="quantity" id="field_quantity" data-cy="quantity" formControlName="quantity" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_transportType">Transport Type</label>
+          <input
+            type="text"
+            class="form-control"
+            name="transportType"
+            id="field_transportType"
+            data-cy="transportType"
+            formControlName="transportType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_electric">Electric</label>
+          <input type="number" class="form-control" name="electric" id="field_electric" data-cy="electric" formControlName="electric" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_water">Water</label>
+          <input type="number" class="form-control" name="water" id="field_water" data-cy="water" formControlName="water" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_waste">Waste</label>
+          <input type="text" class="form-control" name="waste" id="field_waste" data-cy="waste" formControlName="waste" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_department">Department</label>
+          <select
+            class="form-control"
+            id="field_department"
+            data-cy="department"
+            name="department"
+            formControlName="department"
+            [compareWith]="compareDepartments"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="departmentsOption" *ngFor="let departmentsOption of departmentsSharedCollection">
+              {{ departmentsOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

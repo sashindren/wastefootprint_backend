@@ -1,0 +1,20 @@
+{
+  "applications": ["footprinttest"],
+  "changelogDate": "20230301011746",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "departments",
+  "fields": [
+    {
+      "fieldName": "departmentName",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "Departments",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

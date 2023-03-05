@@ -1,0 +1,58 @@
+{
+  "applications": ["footprinttest"],
+  "changelogDate": "20230301011646",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "employee_details",
+  "fields": [
+    {
+      "fieldName": "employeeName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "homeNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "emailAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "transportType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "supervisorName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "companyId",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "name": "EmployeeDetails",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "departments",
+      "relationshipName": "employeedetails",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
